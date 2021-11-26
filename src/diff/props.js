@@ -135,7 +135,7 @@ export function setProperty(dom, name, value, oldValue, isSvg) {
 			// never serialize functions as attribute values
 		} else if (
 			value != null &&
-			(value !== false || (name[0] === 'a' && name[1] === 'r'))
+			(value !== false || (name.startsWith('aria-')||name.startsWith('data-')))
 		) {
 			dom.setAttribute(name, value);
 		} else {
